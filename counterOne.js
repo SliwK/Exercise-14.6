@@ -20,7 +20,7 @@ var CounterOne = React.createClass({
     },
 
     componentDidMount: function() {
-          console.log('ComponentDidMount - tu można wykonać coś na DOM, prezentujemy komponent użytkownikowi');
+          console.log('ComponentDidMount - tu można wykonać coś na DOM - prezentujemy komponent użytkownikowi');
       },
 
     componentWillReceiveProps: function(nextProps) {
