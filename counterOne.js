@@ -15,39 +15,39 @@ var CounterOne = React.createClass({
         });
     },
 
+    componentWillMount: function() {
+        console.log('ComponentWillMount - metoda wywoływana przed zmontowaniem komponentu (nie wymyśliłem zastosowania dla tej metody)');
+    },
+
+    componentDidMount: function() {
+          console.log('ComponentDidMount - tu można wykonać coś na DOM, ');
+      },
+
+    componentWillReceiveProps: function(nextProps) {
+          console.log('ComponentWillRecieveProps - tu skoro przekazujemy te propsy to można w tym momencie porównać czy się rzeczywiscie zmieniły');
+      },
+
+    shouldComponentUpdate: function() {
+          console.log('ShouldComponentUpdate - tutaj można wstrzymać renderowanie zmian - czyli nie renderować skoro nie trzeba');
+          return true;
+      },
+
+    componentWillUpdate: function() {
+          console.log('ComponentWillUpdate - nie znalazłem zastosowania :(');
+      },
+
     render: function() {
         return React.createElement('div', {onClick: this.increment},
             React.createElement('span', {}, 'Licznik wzrastajacy : ' + this.state.counter)
         );
     },
 
-    componentWillMount: function() {
-        console.log('ComponentWillMount');
-    },
+    componentDidUpdate: function() {
+          console.log('ComponentDidUpdate - tutaj znowu można odnieść się do DOM i coś na nim wykonać');
+      },
 
-  componentDidMount: function() {
-        console.log('ComponentDidMount');
-    },
-
-  shouldComponentUpdate: function() {
-        console.log('ShouldComponentUpdate');
-        return true;
-    },
-
-  componentWillReceiveProps: function(nextProps) {
-        console.log('ComponentWillRecieveProps');
-    },
-
-  componentWillUpdate: function() {
-        console.log('ComponentWillUpdate');
-    },
-
-  componentDidUpdate: function() {
-        console.log('ComponentDidUpdate');
-    },
-
-  componentWillUnmount: function() {
-        console.log('componentWillUnmount');
-    }
+    componentWillUnmount: function() {
+          console.log('componentWillUnmount - czyli usuwamy to co nie potrzebne - wprowadzamy zmiany w DOM, usuwamy timery i subskrypcje ... pytanie czym są?');
+      }
 
 });
